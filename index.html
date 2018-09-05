@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="./static/font-awesome/css/font-awesome.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon" />
+    <title>海豚宝</title>
+    <style>
+        html {
+            height: 100%;
+        }
+        
+        body {
+            margin: 0;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        
+        .loading {
+            position: absolute;
+            top: calc( 50% - 20px);
+            left: calc( 50% - 20px);
+            width: 40px;
+            height: 40px;
+            animation: loading linear 4s infinite;
+        }
+        
+        .bootstrap {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: url("./static/bootstrap.png") no-repeat center bottom;
+            background-size: cover;
+        }
+        
+        .bootstrap img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        @keyframes loading {
+            from {
+                transform: rotate(0);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!--      <div class="loading">
+        <img src="static/icon_loading.png" width="40" height="40" >
+      </div>-->
+        <div class="bootstrap"></div>
+    </div>
+
+    <!-- built files will be auto injected -->
+    <!--    <script src="static/fastclick.min.js"></script>
+    <script>
+      if ('addEventListener' in document) {
+        document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body);
+        }, false);
+      }
+    </script>-->
+</body>
+
+</html>

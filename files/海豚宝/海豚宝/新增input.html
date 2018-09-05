@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>My Test Page</title>
+    <script type="text/javascript">
+        var textNumber = 1;
+
+        function addTextBox(form, afterElement) {
+            // Increment the textbox number
+            textNumber++;
+            // Create the label
+            var label = document.createElement("label");
+            // Create the textbox
+            var textField = document.createElement("input");
+            textField.setAttribute("type", "text");
+            textField.setAttribute("name", "txt" + textNumber);
+            textField.setAttribute("id", "txt" + textNumber);
+            // Add the label's text
+            label.appendChild(document.createTextNode("Text Box #" + textNumber + ": "));
+            // Put the textbox inside
+            label.appendChild(textField);
+            // Add it all to the form
+            form.insertBefore(label, afterElement);
+            return false;
+        }
+
+        function removeTextBox(form) {
+            if (textNumber > 1) { // If there's more than one text box
+                // Remove the last one added
+                form.removeChild(document.getElementById("txt" + textNumber).parentNode);
+                textNumber--;
+            }
+        }
+        //-->
+    </script>
+    <style type="text/css">
+        <!-- label {
+            display: block;
+            margin: .25em 0em;
+        }
+        
+        -->
+    </style>
+</head>
+
+<body>
+    <form id="myForm" method="get" action="./" />
+    <label>Text Box #1: <input type="text" name="txt1" id="txt1" /></label>
+    <p>
+        <input type="button" value="Add Textbox" onclick="addTextBox(this.form,this.parentNode)" />
+        <input type="button" value="Remove Textbox" onclick="removeTextBox(this.form)" />
+    </p>
+    <p><input type="Submit" value="Submit" /></p>
+    </form>
+</body>
+
+</html>

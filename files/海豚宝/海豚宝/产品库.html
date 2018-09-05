@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>修改实现添加</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-for="(list,index) in lists">
+            <ul>
+                <li>
+                    <span>商品关键词</span>
+                    <input type="text" v-model="list.name" style="width:100px">
+                </li>
+                <li>
+                    <span>价格</span>
+                    <input type="text" v-model="list.price" style="width:100px">
+                </li>
+                <li>
+                    <button v-on:click="del(index)">删除</button>
+                </li>
+            </ul>
+        </div>
+        <button v-on:click="add">添加</button>
+    </div>
+
+</body>
+<script>
+    var vue = new Vue({
+        el: "#app",
+        data: {
+            tables: [],
+            lists: [{
+                name: "端午优惠",
+                price: "111"
+            }]
+        },
+        methods: {
+            add: function() {
+                let cope = {
+                    name: "",
+                    tel: ""
+                }
+                this.lists.push(cope);
+                console.log(this.lists)
+            },
+            del: function(index) {
+                this.lists.splice(index, 1);
+                console.log(this.lists)
+            }
+        }
+    });
+</script>
+
+</html>
